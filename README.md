@@ -1,5 +1,10 @@
-Django project rest template for Django 1.11.7 with Python 3.6.3
-==============================================================
+Api Fans Store
+==============
+
+
+Python Version: 3.6.3
+---------------------
+
 
 Setup Project:
 --------------
