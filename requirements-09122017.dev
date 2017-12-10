@@ -37,6 +37,7 @@ line-profiler==2.0
 markdown==2.6.10
 markupsafe==1.0           # via jinja2
 mccabe==0.6.1             # via flake8
+model-mommy==1.4.0
 olefile==0.44             # via pillow
 parso==0.1.0              # via jedi
 pexpect==4.3.0            # via ipython
@@ -57,7 +58,7 @@ python-utils==2.2.0       # via progressbar2
 pytz==2017.3              # via django
 requests==2.18.4          # via coreapi
 simplegeneric==0.8.1      # via ipython
-six==1.11.0               # via django-extensions, pip-tools, prompt-toolkit, python-utils, traitlets
+six==1.11.0               # via django-extensions, model-mommy, pip-tools, prompt-toolkit, python-utils, traitlets
 sqlparse==0.2.4
 traitlets==4.3.2          # via ipython
 typing==3.6.2             # via django-extensions
