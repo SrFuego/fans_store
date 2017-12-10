@@ -8,9 +8,10 @@
 
 
 # Local imports
+from .viewsets import KindViewSet
 
 
 # Create your routers here.
-# router_list = (
-#     ("model", ModelViewSet),
-# )
+products = (
+    (r"kinds", KindViewSet),
+)
