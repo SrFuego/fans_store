@@ -1,0 +1,14 @@
+-r common.in
+
+coverage
+django-debug-toolbar
+django-devserver
+django-extensions
+flake8
+ipython
+line_profiler
+pip-tools
+pydotplus
+pygraphviz
+sqlparse
+werkzeug
