@@ -37,7 +37,7 @@ urlpatterns = [
     url(
         r"^docs/",
         include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
-    url(r'^api/v1/', include(router.urls, namespace='api')),
+    url(r"^api/", include(router.urls, namespace="api")),
 ]
 
 if settings.DEBUG:
