@@ -2,7 +2,6 @@
 
 
 # Django imports
-from django.apps import AppConfig
 
 
 # Third party apps imports
@@ -12,6 +11,3 @@ from django.apps import AppConfig
 
 
 # Configure your app here.
-class CommonConfig(AppConfig):
-    name = "apps.common"
-    verbose_name = "Common"

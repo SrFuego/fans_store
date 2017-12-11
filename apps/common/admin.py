@@ -2,7 +2,6 @@
 
 
 # Django imports
-from django.contrib import admin
 
 
 # Third party apps imports

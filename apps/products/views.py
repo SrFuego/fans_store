@@ -2,7 +2,7 @@
 
 
 # Django imports
-from rest_framework.views import APIView
+# from rest_framework.views import APIView
 
 
 # Third party apps imports
