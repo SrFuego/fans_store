@@ -29,3 +29,25 @@ class Kind(TimeStampedModel):
             raise ValidationError(
                 "No puede haber mas de un tipo con el mismo nombre")
         return super().save()
+
+    @property
+    def products(self):
+        return self.product_set.all()
+
+
+class Product(TimeStampedModel):
+    name = models.CharField(max_length=50)
+    kind = models.ForeignKey("Kind")
+
+    class Meta:
+        verbose_name = "Producto"
+
+    def __str__(self):
+        return self.name
+    #
+    # def save(self):
+    #     return super(Product, self).save()
+    #
+    # @models.permalink
+    # def get_absolute_url(self):
+    #     return ("")
