@@ -38,6 +38,7 @@ THIRD_PARTY_APPS = (
     "pipeline",
     "rest_framework",
     "corsheaders",
+    "stdimage",
 )
 
 LOCAL_APPS = (
