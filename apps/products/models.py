@@ -50,11 +50,14 @@ class Kind(TimeStampedModel):
 
 
 class Product(TimeStampedModel):
+    available = models.PositiveSmallIntegerField(verbose_name="disponible")
+    code = models.CharField(max_length=10, verbose_name="código", unique=True)
     description = models.TextField(verbose_name="descripción")
     donations = models.PositiveSmallIntegerField(
         verbose_name="donaciones", default=0)
     kind = models.ForeignKey("Kind", verbose_name="tipo")
     name = models.CharField(max_length=50, verbose_name="nombre")
+    offer = models.PositiveSmallIntegerField(verbose_name="oferta", default=0)
     price = models.PositiveSmallIntegerField(verbose_name="precio", default=0)
     stock = models.PositiveSmallIntegerField(default=0)
     views = models.PositiveSmallIntegerField(verbose_name="vistas", default=0)
