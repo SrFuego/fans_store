@@ -20,8 +20,9 @@ class KindTestCase(TestCase):
         self.kind = mommy.make(Kind)
         self.products = mommy.make(Product, kind=self.kind, _quantity=3)
 
-    def test_method_str_return_name(self):
-        self.assertEqual(self.kind.__str__(), self.kind.name)
+    def test_method_str_return_name_and_category(self):
+        self.assertTrue(self.kind.name in self.kind.__str__())
+        self.assertTrue(self.kind.category in self.kind.__str__())
 
     def test_there_should_not_be_two_types_with_the_same_name(self):
         kind_name = self.kind.name
