@@ -17,3 +17,4 @@ from .serializers import KindSerializer
 class KindViewSet(ModelViewSet):
     queryset = Kind.objects.all()
     serializer_class = KindSerializer
+    http_method_names = [u'get']

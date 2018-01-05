@@ -12,7 +12,6 @@ from ..products.routers import products
 
 # Create your routers here.
 routers_tuples = (products,)
-routers_tuples = ()
 routers_lists = sum(
     [list(router_tuple) for router_tuple in routers_tuples], [])
 
