@@ -1,0 +1,48 @@
+.section_faq{
+  .banner_section{
+    width: 100%;
+    height: 270px;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+      image: url(/static/img/bg_banner.jpg);
+    };
+    position: relative;
+    padding:  85px 0 0;
+    color: #fff;
+    .title{
+      font-size: 42px;
+      margin: 0 0 20px;
+      font-weight: 800;
+      span{
+        border-bottom: 10px solid $fs-primario;
+      }
+    }
+    .subtitle {
+      font-size: 26px;
+      margin: 0;
+    }
+  }
+  .content_pad{
+    padding: 35px 15px;
+  }
+  .list_collapsible{
+    .title {
+      font-size: 24px;
+      color: $fs-primario;
+    }
+    .ui-collapsible{
+      .ui-collapsible__header{
+        padding: 12px;
+        .ui-collapsible__header-content{
+          font-size: 18px;
+          color: #212121;
+        }
+      }
+      .ui-collapsible__body{
+        font-size: 16px;
+      }
+    }
+  }
+}

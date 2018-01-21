@@ -1,0 +1,78 @@
+$fs-primario: #FB3B44;
+$fs-secundario: #424242;
+$fanstore: (
+  'primario': #FB3B44,
+  'primario-claro': #cfc2e0,
+  'primario-oscuro': #5a4494,
+  'secundario': #5c6bc0,
+  'secundario-claro': #c5cae9,
+  'secundario-oscuro': #3f51b5,
+  'dark-principal': #212121,
+  'dark-secundario': #bcbcc0,
+  'dark-hint': #5e5e5e 
+);
+$shades: (
+  "black": #000000,
+  "white": #FFFFFF,
+  "transparent":  transparent
+);
+$red: (
+  "accent-2": #FF5252
+);
+$grey: (
+  "darken-2": #616161
+);
+$blue: (
+  "base": #2196F3
+);
+$green: (
+  "base": #4CAF50
+);
+$colors: (
+  "anda": $fanstore,
+  "shades": $shades,
+  "blue": $blue,
+  "red": $red,
+  "grey": $grey,
+  "green": $green
+);
+
+// Color Classes
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    .color-#{$color_name}-#{$color_type} {
+      background-color: $color_value !important;
+    }
+    .color-#{$color_name}-#{$color_type}-text {
+      color: $color_value !important;
+    }
+    .text-color-active-#{$color_name}-#{$color_type}{
+      color: $color_value !important;
+    }
+    .text-color-#{$color_name}-#{$color_type}{
+      color: $color_value !important;
+    }
+  }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+  .#{$color} {
+    background-color: $color_value !important;
+  }
+  .#{$color}-text {
+    color: $color_value !important;
+  }
+}
+
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}

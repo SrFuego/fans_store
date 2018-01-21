@@ -1,7 +1,0 @@
-[report]
-omit =
-    */migrations/*
-    config/*
-    apps/*/tests/*
-
-show_missing = True

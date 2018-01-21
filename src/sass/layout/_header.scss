@@ -1,0 +1,71 @@
+.header-app{
+  $hh: 80px;
+  position: relative;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  min-height: 1px;
+  height: $hh;
+  padding: 10px;
+  .section-logo{
+    float: left;
+    img{
+      display: block;
+      width: auto;
+      height: $hh - 20;
+    }
+  }
+  .section-menu{
+    float: left;
+    padding-left: 40px;
+    padding-top: 5px;
+    .divider-menu{
+      height: 1px;
+      width: 100%;
+      display: block;
+      background-color: $fs-secundario;
+      margin: 6px 0;
+    }
+    .menu-top{
+      .nav_menu{
+        position: relative;
+        margin-left: -2px;
+        > li{
+          font-size: 12px;
+          // text-transform: uppercase;
+          float: left;
+          padding: 0 2px;
+          color: $fs-secundario;
+          & + li{
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+    .menu-bottom{
+      .nav_menu{
+        position: relative;
+        margin-top: 0px;
+        margin-left: -6px;
+        > li{
+          float: left;
+          > a{
+            font-size: 16px;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0 6px;
+            color: $fs-secundario;
+            font-weight: 600;
+            &.router-link-active{
+              color: $fs-primario;
+            }
+            &:hover, &:focus{
+              background-color: transparent;
+              color: $fs-primario;
+            }
+          }
+        }
+      }
+    }
+  }
+}

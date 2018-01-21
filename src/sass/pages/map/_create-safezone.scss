@@ -1,0 +1,59 @@
+.create_safezone{
+  position: absolute;
+  top: 90px;
+  left: 30px;
+  width: 350px;
+  background-color: transparent;
+  z-index: 99;
+  .content_title{
+    background-color: #fff;
+    box-shadow: 0 8px 21px rgba(0, 0, 0, 0.25), 5px 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    margin: 0 0 25px;
+    width: 100%;
+    padding: 12px;
+    h5{
+      color: #6E57a0;
+      margin: 0 0 10px;
+    }
+    /deep/ .ui-textbox{
+      margin: 0 0 25px;
+    }
+    .btn-options{
+      padding-top: 12px;
+      text-align: center;
+      position: relative;
+    }
+    .list-itemsContent{
+      $hscroll: 180px;
+      margin: 0;
+      position: relative;
+      height: $hscroll;//185px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .scrollbar-create_safezone{
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-width: 100%;
+        max-height: $hscroll;
+        z-index: 9;;
+        .scroll-div{
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+      .list_devices{
+        width: 100%;
+        position: relative;
+        > li{
+          float: none;
+          padding: 0;
+          width: 100%;
+          margin: 0;
+          position: relative;
+        }
+      }
+    }
+  }
+}

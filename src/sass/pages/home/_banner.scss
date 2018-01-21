@@ -1,0 +1,40 @@
+.section-banner{
+  $hbanner: 450px;
+  width: 100%;
+  height: $hbanner;
+  background: {
+    image: url(/static/img/bg_fanstore.jpg);
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  };
+  position: relative;
+  margin-bottom: 45px;
+  .bg-black {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+  }
+  .content-text{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 45px 0 60px;
+    color: #fff;
+    .sb-title{
+      font-size: 40px;
+      font-weight: 600;
+      margin: 0 0 15px;
+    }
+    .sb-description{
+      margin: 0;
+      font-size: 26px;
+      line-height: 26px;
+    }
+  }
+}
