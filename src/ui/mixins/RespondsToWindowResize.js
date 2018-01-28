@@ -1,4 +1,5 @@
-// import debounce from 'lodash.debounce'
+import debounce from 'lodash.debounce'
+
 export default {
   data () {
     return {
@@ -7,7 +8,7 @@ export default {
   },
 
   mounted () {
-    this.windowResizeListener = _.debounce(() => {
+    this.windowResizeListener = debounce(() => {
       this.$emit('window-resize')
     }, 200)
 

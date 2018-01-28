@@ -1,12 +1,12 @@
 <template>
-  <div class="header-app">
+  <div class="header__app">
     <div class="container">
-      <div class="section-logo">
+      <div class="header__logo">
         <img src="/static/img/logo.png">
       </div>
-      <div class="section-menu">
+      <div class="header__menu">
         <div class="content-menu">
-          <div class="menu-top">
+          <div class="menu-top clearfix">
             <ul class="nav nav_menu">
               <li>Telf: +993305902</li>
               <li>/</li>
@@ -16,7 +16,7 @@
             </ul>
           </div>
           <div class="divider-menu"></div>
-          <div class="menu-bottom">
+          <div class="menu-bottom clearfix">
             <ul class="nav nav_menu">
               <li>
                 <router-link :to="{name: 'HomeView'}">
@@ -24,20 +24,25 @@
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name: 'AboutView'}">
+                <router-link :to="{name: 'AboutPage'}">
                   <span class="name_a">Nosotros</span>
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name: 'FaqView'}">
-                  <span class="name_a">Puntos de Venta</span>
+                <router-link :to="{name: 'ProductPage'}">
+                  <span class="name_a">Productos</span>
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name: 'FaqView'}">
+                <router-link :to="{name: 'FaqPage'}">
                   <span class="name_a">Dudas</span>
                 </router-link>
               </li>
+              <!-- li>
+                <router-link :to="{name: 'FaqView'}">
+                  <span class="name_a">Dudas</span>
+                </router-link>
+              </li -->
             </ul>
           </div>
         </div>

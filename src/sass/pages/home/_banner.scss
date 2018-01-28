@@ -1,15 +1,15 @@
 .section-banner{
-  $hbanner: 450px;
+  $hbanner: 600px;
   width: 100%;
   height: $hbanner;
   background: {
-    image: url(/static/img/bg_fanstore.jpg);
+    image: url(/static/img/product1.png);
     position: center;
     repeat: no-repeat;
     size: cover;
   };
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 60px;
   .bg-black {
     height: 100%;
     width: 100%;
@@ -18,23 +18,48 @@
     left: 0;
     background-color: rgba(0,0,0,.5);
   }
-  .content-text{
+  .content-table{
     position: absolute;
     z-index: 9;
     width: 100%;
-    bottom: 0;
+    height: 100%;
+    top: 0;
     left: 0;
     padding: 45px 0 60px;
     color: #fff;
-    .sb-title{
-      font-size: 40px;
-      font-weight: 600;
-      margin: 0 0 15px;
+    display: table;
+    // text-align: center;
+    .content-center{
+      display: table-cell;
+      vertical-align: middle;
     }
     .sb-description{
       margin: 0;
+      width: 500px;
+      margin: 0 auto;
       font-size: 26px;
       line-height: 26px;
+    }
+    .sb-title{
+      font-size: 46px;
+      font-weight: 900;
+      margin: 0 0 15px;
+    }
+    .sb-price{
+      font-size: 40px;
+      text-align: left;
+      font-weight: 700;
+      color: #fff;
+      .special-price{
+        color: $fs-primario;
+        font-weight: 900;
+      }
+      .old-price{
+        font-size: 30px;
+        font-weight: normal;
+        text-decoration: line-through;
+        margin-left: 6px;
+      }
     }
   }
 }

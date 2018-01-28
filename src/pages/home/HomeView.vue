@@ -4,7 +4,7 @@
   <div class="section_products">
     <div class="container">
       <div class="title">
-        <h5>Productos destacados<span></span></h5>
+        <h5>DESTACADOS<span></span></h5>
       </div>
       <div class="slider_products">
         <div class="slider-inner clearfix">
@@ -17,9 +17,23 @@
           </tiny-slider>
         </div>
       </div>
-      <br>
+    </div>
+  </div>
+  <div class="section_love">
+    <div class="container">
+      <div class="content_love">
+        <div class="bg_black"></div>
+        <div class="description">
+          <h5>TE GUSTA NUESTROS PRODUCTOS?</h5>
+          <router-link :to="{name: 'HomeView'}">VER MÁS</router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section_products">
+    <div class="container">
       <div class="title">
-        <h5>NUEVOS PRODUCTOS<span></span></h5>
+        <h5>NUEVOS<span></span></h5>
       </div>
       <div class="slider_products">
         <div class="slider-inner clearfix">
@@ -46,9 +60,9 @@
       </div>
     </div>
   </div>
-  <ui-modal class="modal-term" ref="join" remove-close-button remove-header>
-    <h5>SportApp</h5>
-    <p>{{ flagJoin ? 'Ahora eres parte de la familia sportapp, te mantendremos informado sobre las actividades y/o novedades de tu interes.' : 'Tu correo ya esta registrado' }}</p>
+  <ui-modal class="modal-join" ref="join" remove-close-button remove-header>
+    <h5>Fans Store</h5>
+    <p>{{ flagJoin ? 'Ahora eres parte de la familia Fans Store, te mantendremos informado sobre las actividades y/o novedades de tu interes.' : 'Tu correo ya esta registrado' }}</p>
     <div slot="footer">
       <ui-button @click="closeModal('join')" color="shades-white-text">Cerrar</ui-button>
     </div>
@@ -70,7 +84,18 @@
     data () {
       return {
         newsletter: '',
-        flagJoin: false
+        flagJoin: true
+      }
+    },
+    methods: {
+      openModal (name) {
+        this.$refs[name].open()
+      },
+      closeModal (name) {
+        this.$refs[name].close()
+      },
+      onSubmitJoin () {
+        this.openModal('join')
       }
     }
   }

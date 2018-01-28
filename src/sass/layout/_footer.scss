@@ -1,0 +1,85 @@
+.footer__app{
+  background-color: #212121;
+  color: $fs-primario;
+  width: 100%;
+  min-height: 1%;
+  padding: 45px 0 30px;
+  .f__logo{
+    width: 100%;
+    margin-bottom: 40px;
+    img{
+      height: 50px;
+      width: auto;
+    }
+  }
+  .f__info{
+    color: #fff;
+    p{
+      margin: 0;
+      & + p{
+        margin-top: 15px;
+      }
+    }
+  }
+  .nav__social{
+    display: block;
+    margin-top: 25px;
+    > li{
+      float: left;
+      width: 24px;
+      height: 24px;
+      display: block;
+      > a{
+        display: block;
+        background-color: transparent;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        margin: 0;
+        img{
+          width: 100%;
+          display: block;
+        }
+        &:hover, &:focus{
+          text-decoration: none;
+        }
+      }
+      & + li{
+        margin-left: 15px;
+      }
+    }
+  }
+  h5{
+    font-weight: 600;
+    color: $fs-primario;
+    font-size: 26px;
+    float: right;
+    margin: 0 0 25px;
+  }
+  .nav__menu{
+    position: relative;
+    margin-top: 0px;
+    float: right;
+    > li{
+      float: none;
+      & + li{
+        margin-top: 15px;
+      }
+      > a{
+        font-size: 16px;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0 6px;
+        color: #fff;
+        font-weight: 600;
+        &.router-link-active{
+          color: $fs-primario;
+        }
+        &:hover, &:focus{
+          background-color: transparent;
+          color: $fs-primario;
+        }
+      }
+    }
+  }
+}

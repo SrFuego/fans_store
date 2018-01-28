@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomeView from '@/pages/home/HomeView'
-import FaqView from '@/pages/faq/FaqView'
-import AboutView from '@/pages/about/AboutView'
+import FaqPage from '@/pages/faq/FaqPage'
+import AboutPage from '@/pages/about/AboutPage'
+import ProductPage from '@/pages/products/ProductPage'
 
 Vue.use(Router)
 
@@ -15,13 +16,18 @@ export default new Router({
     },
     {
       path: '/preguntas-dudas',
-      name: 'FaqView',
-      component: FaqView
+      name: 'FaqPage',
+      component: FaqPage
     },
     {
       path: '/nosotros',
-      name: 'AboutView',
-      component: AboutView
+      name: 'AboutPage',
+      component: AboutPage
+    },
+    {
+      path: '/productos',
+      name: 'ProductPage',
+      component: ProductPage
     }
   ]
 })

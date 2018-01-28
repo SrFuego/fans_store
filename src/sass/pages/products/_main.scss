@@ -1,0 +1,187 @@
+.section_products{
+  width: 100%;
+  padding: 0 0 60px;
+  position: relative;
+  .banner_section{
+    width: 100%;
+    height: 270px;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+      image: url(/static/img/bg_banner.jpg);
+    };
+    position: relative;
+    padding:  85px 0 0;
+    color: #fff;
+    .title{
+      font-size: 42px;
+      margin: 0 0 20px;
+      font-weight: 800;
+      span{
+        border-bottom: 10px solid $fs-primario;
+      }
+    }
+    .subtitle {
+      font-size: 26px;
+      margin: 0;
+    }
+  }
+  .content__search{
+    padding: 40px 0;
+    margin: 0 auto;
+    width: 280px + 834px + 104px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .content__filter{
+    width: 280px;
+    position: relative;
+    padding-top: 30px;
+    .title{
+      font-weight: 600;
+      color: $fs-secundario;
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+    /deep/ .ui-button{
+      height: 46px;
+      width: 150px;
+      margin: 15px auto 0;
+      border-radius: 6px;
+      .ui-button__content{
+        color: #fff;
+      }
+    }
+    .list_deports, .list_location,.list_weeks{
+      border: 1px solid #464646;
+      background-color: #373737;
+      margin-bottom: 40px;
+      border-radius: 6px;
+      .local_sub{
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .list_deports-item,
+      .list_weeks-item{
+        // justify-content: center;
+        position: relative;
+        align-items: center;
+        display: flex;
+        padding: 8px 15px;
+        // height: 50px;
+        color: #fff;
+        border: 1px solid transparent;
+        &.active{
+          background-color: #00A63B;
+        }
+        & + .list_weeks-item{
+          border-top: 1px solid #464646;
+        }
+        &:hover{
+          color: $fs-primario;
+        }
+        &:first-child{
+          border-radius: 6px 6px 0 0;
+        }
+        &:last-child{
+          border-radius: 0 0 6px 6px;
+        }
+        & + .list_deports-item{
+          margin-top: 1px;
+          &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #464646;
+            top: -2px;
+            left: 0;
+          }
+        }
+      }
+      /deep/ .ui-datepicker{
+        width: 100%;
+        // border-radius: 6px;
+        // background-color: #212121;
+        .ui-datepicker__display{
+          background-color: #3C3C3C;
+        }
+        &.is-invalid:not(.is-disabled),
+        &.is-invalid:not(.is-disabled){
+          .ui-select__display{
+            border: 1px solid #E52020;
+          }
+        }
+        .ui-datepicker__dropdown-button{
+          height: 40px;
+          top: 0;
+        }
+        .ui-datepicker__label-text,
+        &.is-active:not(.is-disabled) .ui-datepicker__label-text, 
+        &.is-active:not(.is-disabled) .ui-datepicker__icon-wrapper .ui-icon {
+          color: #fff;
+          font-weight: 300;
+          font-size: 14px;
+          margin-bottom: 7px;
+        }
+      }
+      /deep/ .ui-select{
+        margin: 0;
+        width: 100%;
+        // height: 48px;
+        // border-radius: 6px;
+        // background-color: #212121;
+        &.is-invalid:not(.is-disabled),
+        &.is-invalid:not(.is-disabled){
+          .ui-select__display{
+            border: 1px solid #E52020;
+          }
+        }
+        .ui-select__dropdown-button{
+          height: 40px;
+          top: 0;
+        }
+        .ui-select__label-text,
+        &.is-active:not(.is-disabled) .ui-select__label-text, 
+        &.is-active:not(.is-disabled) .ui-select__icon-wrapper .ui-icon {
+          color: #fff;
+          font-weight: 300;
+          font-size: 14px;
+          margin-bottom: 7px;
+        }
+        .ui-select__display{
+          border: 1px solid #424242;
+          height: 40px !important;
+        }
+        & + .ui-select{
+          margin-top: 15px;
+        }
+      }
+    }
+    .list_date{
+      .list_weeks{
+        margin-bottom: 0;
+        border-radius: 6px 6px 0 0; 
+      }
+      .list_location{
+        border-top: 0;
+        border-radius: 6px; 
+      }
+    }
+    .list_location{
+      padding: 15px 16px 15px;
+    }
+  }
+  .content__products{
+    $w: 834px;
+    width: $w;
+    position: relative;
+    margin-top: 30px;
+
+    .list-products{
+      width: 275px;
+    }
+  }
+}
