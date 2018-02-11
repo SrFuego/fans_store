@@ -12,5 +12,6 @@ djangorestframework
 markdown
 pip-tools
 psycopg2
+psycopg2-binary
 pygments
 unipath
