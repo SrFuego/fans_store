@@ -9,12 +9,18 @@ from rest_framework.viewsets import ModelViewSet
 
 
 # Local imports
-from .models import Kind
-from .serializers import KindSerializer
+from .models import Kind, Product
+from .serializers import KindSerializer, ProductSerializer
 
 
 # Create your viewsets here.
 class KindViewSet(ModelViewSet):
     queryset = Kind.objects.all()
     serializer_class = KindSerializer
+    http_method_names = [u'get']
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
     http_method_names = [u'get']

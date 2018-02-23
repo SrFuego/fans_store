@@ -8,10 +8,11 @@
 
 
 # Local imports
-from .viewsets import KindViewSet
+from .viewsets import KindViewSet, ProductViewSet
 
 
 # Create your routers here.
 products = (
     (r"kinds", KindViewSet),
+    (r"products", ProductViewSet),
 )

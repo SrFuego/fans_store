@@ -9,12 +9,12 @@ from django.contrib import admin
 
 
 # Local imports
-from .models import Image, Kind, Product
+from .models import Color, Kind, Model, Product, Size
 
 
 # Register your models here.
-@admin.register(Image)
-class ImageModelAdmin(admin.ModelAdmin):
+@admin.register(Model)
+class ModelModelAdmin(admin.ModelAdmin):
     list_display = ("product", "image_admin_thumbnail",)
 
 
@@ -25,5 +25,9 @@ class KindModelAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductModelAdmin(admin.ModelAdmin):
-    list_display = ("name", "kind", "price", "stock", "views",)
+    list_display = ("name", "kind", "views",)
     exclude = ("views",)
+
+
+admin.site.register(Color)
+admin.site.register(Size)

@@ -5,31 +5,35 @@
 
 
 # Third party apps imports
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 
 
 # Local imports
-from .models import Image, Kind, Product
+from .models import Kind, Model, Product
 
 
 # Create your serializers here.
-class ImageSerializer(ModelSerializer):
+class ModelSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(source="image.medium")
+
     class Meta:
-        model = Image
+        model = Model
         fields = ("image",)
 
 
-class KindSerializer(ModelSerializer):
+class KindSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kind
         fields = ("name", "category",)
 
 
-class ProductSerializer(ModelSerializer):
-    images = ImageSerializer(many=True)
+class ProductSerializer(serializers.ModelSerializer):
+    models = ModelSerializer(many=True)
 
     class Meta:
         model = Product
-        fields = (
-            "name", "description", "stock", "available", "donations", "price",
-            "offer", "images",)
+        fields = "__all__"
+        # fields = (
+        #     "name", "description", "stock", "available", "donations",
+        #     "price",
+        #     "offer", "images",)
