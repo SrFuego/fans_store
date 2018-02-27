@@ -39,6 +39,7 @@ THIRD_PARTY_APPS = (
     "rest_framework",
     "corsheaders",
     "stdimage",
+    "django_filters",
 )
 
 LOCAL_APPS = (
@@ -129,7 +130,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Django Rest Framework Settings
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",)
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
+    "DEFAULT_FILTER_BACKENDS": (
+        "django_filters.rest_framework.DjangoFilterBackend",)
 }
 
 # Django Rest Framework CORS configuration

@@ -23,4 +23,5 @@ class KindViewSet(ModelViewSet):
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_fields = ("kind",)
     http_method_names = [u'get']
