@@ -10,7 +10,6 @@ from django.utils.html import format_html
 from model_utils.models import TimeStampedModel
 from stdimage.models import StdImageField
 from stdimage.utils import UploadToAutoSlugClassNameDir
-# from stdimage.validators import MaxSizeValidator, MinSizeValidator
 
 
 # Local imports
@@ -61,28 +60,17 @@ class Model(TimeStampedModel):
     color = models.ForeignKey("Color")
     image = StdImageField(
         upload_to=UploadToAutoSlugClassNameDir(populate_from="product"),
-        # validators=[
-        # MinSizeValidator(300, 150), MaxSizeValidator(1000, 1000)],
         variations={"thumbnail": (200, 100), "medium": (500, 500)},
         verbose_name="imagen")
     offer = models.PositiveSmallIntegerField(default=0, verbose_name="oferta")
     price = models.PositiveSmallIntegerField(default=0, verbose_name="precio")
     product = models.ForeignKey("Product", verbose_name="producto")
+    size = models.ManyToManyField(
+        "Size", related_name="sizes", verbose_name="talla")
     stock = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         verbose_name = "Modelo"
-        # verbose_name_plural = "Imágenes"
-
-    # def __str__(self):
-    #     return super().__str__()
-    #
-    # def save(self):
-    #     return super().save()
-    #
-    # @models.permalink
-    # def get_absolute_url(self):
-    #     return ('')
 
     def image_admin_thumbnail(self):
         if self.image:
@@ -109,9 +97,6 @@ class Product(TimeStampedModel):
 
     def __str__(self):
         return self.name
-
-    # def save(self):
-    #     return super().save()
 
     @property
     def models(self):

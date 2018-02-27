@@ -3,6 +3,8 @@
 
 # Django imports
 from django.contrib import admin
+from django.db import models
+from django.forms import CheckboxSelectMultiple
 
 
 # Third party apps imports
@@ -16,6 +18,9 @@ from .models import Color, Kind, Model, Product, Size
 @admin.register(Model)
 class ModelModelAdmin(admin.ModelAdmin):
     list_display = ("product", "image_admin_thumbnail",)
+    formfield_overrides = {
+        models.ManyToManyField: {"widget": CheckboxSelectMultiple},
+    }
 
 
 @admin.register(Kind)
