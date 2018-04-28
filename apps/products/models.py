@@ -56,13 +56,16 @@ class Kind(TimeStampedModel):
 
 
 class Model(TimeStampedModel):
-    available = models.PositiveSmallIntegerField(verbose_name="disponible")
+    available = models.PositiveSmallIntegerField(
+        verbose_name="cantidad disponible")
     color = models.ForeignKey("Color")
     image = StdImageField(
         upload_to=UploadToAutoSlugClassNameDir(populate_from="product"),
         variations={"thumbnail": (200, 100), "medium": (500, 500)},
         verbose_name="imagen")
-    offer = models.PositiveSmallIntegerField(default=0, verbose_name="oferta")
+    offer = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="precio oferta (dejar en 0 si no esta en oferta)")
     price = models.PositiveSmallIntegerField(default=0, verbose_name="precio")
     product = models.ForeignKey("Product", verbose_name="producto")
     size = models.ManyToManyField(

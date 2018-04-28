@@ -18,14 +18,14 @@ from .serializers import KindSerializer, ProductSerializer
 class KindViewSet(ModelViewSet):
     queryset = Kind.objects.all()
     serializer_class = KindSerializer
-    http_method_names = [u'get']
+    http_method_names = ["get"]
 
 
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_fields = ("kind",)
-    http_method_names = [u'get']
+    http_method_names = ["get"]
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
