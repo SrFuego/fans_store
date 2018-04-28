@@ -26,9 +26,6 @@ from apps.common.routers import router
 from rest_framework.documentation import include_docs_urls
 
 
-from apps.products.views import MostViewedAPIView, NewersAPIView
-
-
 API_TITLE = "Fans Store"
 API_DESCRIPTION = "..."
 
@@ -41,9 +38,5 @@ urlpatterns = [
     url(
         r"^docs/",
         include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
-    url(r"^api/v1/", include(router.urls, namespace="api")),
-    url(
-        r"api/v1/most_viewed/",
-        MostViewedAPIView.as_view(), name="most-viewed"),
-    url(r"api/v1/newers/", NewersAPIView.as_view(), name="newers")
+    url(r"^api/v1/", include(router.urls, namespace="api_v1"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

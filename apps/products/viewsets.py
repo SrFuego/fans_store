@@ -6,7 +6,7 @@
 
 # Third party apps imports
 from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ViewSet
 
 
 # Local imports
@@ -19,6 +19,24 @@ class KindViewSet(ModelViewSet):
     queryset = Kind.objects.all()
     serializer_class = KindSerializer
     http_method_names = ["get"]
+
+
+class MostViewedViewSet(ViewSet):
+    http_method_names = ["get"]
+
+    def list(self, request, *args, **kwargs):
+        queryset = Product.objects.all().order_by("views")[:6]
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class NewersViewSet(ViewSet):
+    http_method_names = ["get"]
+
+    def list(self, request, *args, **kwargs):
+        queryset = Product.objects.all().order_by("created")[:6]
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 class ProductViewSet(ModelViewSet):
