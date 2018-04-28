@@ -36,3 +36,10 @@ DATABASES = {
 PIPELINE = {
     "PIPELINE_ENABLED": True,
 }
+
+
+# Graph models conf
+GRAPH_MODELS = {
+    "all_applications": True,
+    "group_models": True,
+}
