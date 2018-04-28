@@ -47,11 +47,3 @@ urlpatterns = [
         MostViewedAPIView.as_view(), name="most-viewed"),
     url(r"api/v1/newers/", NewersAPIView.as_view(), name="newers")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-if settings.DEBUG:
-    import debug_toolbar
-
-    urlpatterns = [
-        url(r"^__debug__/", include(debug_toolbar.urls)),
-    ] + urlpatterns

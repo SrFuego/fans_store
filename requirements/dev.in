@@ -1,15 +1,9 @@
 -r common.in
 
 coverage
-django-debug-toolbar
-django-devserver
 django-extensions
 flake8
 ipython
-line_profiler
 model_mommy
-pip-tools
 pydotplus
 pygraphviz
-sqlparse
-werkzeug

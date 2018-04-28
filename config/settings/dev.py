@@ -12,15 +12,11 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 THIRD_PARTY_APPS_LOCAL = (
-    "debug_toolbar",
     "django_extensions",
 )
 
 INSTALLED_APPS += THIRD_PARTY_APPS_LOCAL
 
-MIDDLEWARE += (
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
-)
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
