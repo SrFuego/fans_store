@@ -18,4 +18,4 @@ routers_lists = sum(
 router = DefaultRouter()
 
 for router_list in sorted(routers_lists):
-    router.register(router_list[0], router_list[1])
+    router.register(router_list[0], router_list[1], base_name=router_list[0])
