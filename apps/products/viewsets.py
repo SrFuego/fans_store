@@ -11,11 +11,18 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 
 # Local imports
 from .filtersets import ProductFilter
-from .models import Kind, Product
-from .serializers import KindSerializer, ProductSerializer
+from .models import Color, Kind, Product, Size
+from .serializers import (
+    ColorSerializer, KindSerializer, ProductSerializer, SizeSerializer,)
 
 
 # Create your viewsets here.
+class ColorViewSet(ModelViewSet):
+    queryset = Color.objects.all()
+    serializer_class = ColorSerializer
+    http_method_names = ["get"]
+
+
 class KindViewSet(ModelViewSet):
     queryset = Kind.objects.all()
     serializer_class = KindSerializer
@@ -52,3 +59,9 @@ class ProductViewSet(ModelViewSet):
         instance.save(update_fields=["views"])
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
+
+
+class SizeViewSet(ModelViewSet):
+    queryset = Size.objects.all()
+    serializer_class = SizeSerializer
+    http_method_names = ["get"]

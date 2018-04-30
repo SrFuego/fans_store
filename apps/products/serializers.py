@@ -9,10 +9,16 @@ from rest_framework import serializers
 
 
 # Local imports
-from .models import Kind, Model, Product
+from .models import Color, Kind, Model, Product, Size
 
 
 # Create your serializers here.
+class ColorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Color
+        fields = ("id", "name",)
+
+
 class KindSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kind
@@ -42,3 +48,9 @@ class ProductSerializer(serializers.ModelSerializer):
         # fields = "__all__"
         # depth = 3
         fields = ("id", "name", "description", "donations", "kind", "models",)
+
+
+class SizeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Size
+        fields = ("id", "name",)
