@@ -15,7 +15,7 @@ from django.db import models
 class ProductManager(models.QuerySet):
 
     def most_viewed(self):
-        return self.all().order_by("views")[:6]
+        return self.all().order_by("-views")[:6]
 
     def newers(self):
-        return self.all().order_by("created")[:6]
+        return self.all().order_by("-created")[:6]
