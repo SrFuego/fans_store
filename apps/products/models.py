@@ -13,6 +13,7 @@ from stdimage.utils import UploadToAutoSlugClassNameDir
 
 
 # Local imports
+from .managers import ProductManager
 
 
 # Create your models here.
@@ -91,6 +92,7 @@ class Product(TimeStampedModel):
         default=0, verbose_name="donaciones")
     kind = models.ForeignKey("Kind", verbose_name="tipo")
     name = models.CharField(max_length=50, verbose_name="nombre")
+    objects = ProductManager.as_manager()
     views = models.PositiveSmallIntegerField(default=0, verbose_name="vistas")
 
     class Meta:

@@ -26,7 +26,7 @@ class ModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Model
-        fields = "__all__"
+        # fields = "__all__"
         fields = (
             "available", "color", "image", "offer", "price", "size", "stock",)
 

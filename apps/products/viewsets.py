@@ -25,7 +25,7 @@ class MostViewedViewSet(ViewSet):
     http_method_names = ["get"]
 
     def list(self, request, *args, **kwargs):
-        queryset = Product.objects.all().order_by("views")[:6]
+        queryset = Product.objects.most_viewed()
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
@@ -34,7 +34,7 @@ class NewersViewSet(ViewSet):
     http_method_names = ["get"]
 
     def list(self, request, *args, **kwargs):
-        queryset = Product.objects.all().order_by("created")[:6]
+        queryset = Product.objects.newers()
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
