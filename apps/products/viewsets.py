@@ -10,6 +10,7 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 
 
 # Local imports
+from .filtersets import ProductFilter
 from .models import Kind, Product
 from .serializers import KindSerializer, ProductSerializer
 
@@ -42,7 +43,7 @@ class NewersViewSet(ViewSet):
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    filter_fields = ("kind",)
+    filter_class = ProductFilter
     http_method_names = ["get"]
 
     def retrieve(self, request, *args, **kwargs):
