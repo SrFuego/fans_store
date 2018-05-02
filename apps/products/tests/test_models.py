@@ -2,7 +2,6 @@
 
 
 # Django imports
-from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 
@@ -39,6 +38,22 @@ class KindTestCase(TestCase):
 
     def tearDown(self):
         self.kind.delete()
+
+
+class ModelTestCase(TestCase):
+    def setUp(self):
+        self.model = mommy.make(Model)
+
+    def test_method_str_return_name(self):
+        self.assertEqual(
+            self.model.__str__(),
+            "{0}, {1}".format(self.model.product.name, self.model.color))
+
+    def test_have_queryset_sizes(self):
+        self.assertTrue(self.model.sizes.model is Size)
+
+    def tearDown(self):
+        self.model.delete()
 
 
 class ProductTestCase(TestCase):

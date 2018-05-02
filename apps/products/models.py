@@ -76,13 +76,17 @@ class Model(TimeStampedModel):
     class Meta:
         verbose_name = "Modelo"
 
+    def __str__(self):
+        return "{0}, {1}".format(self.product.name, self.color)
+
     def image_admin_thumbnail(self):
-        if self.image:
-            return format_html(
-                "<img src='{0}' alt='{1}'>", self.image.thumbnail.url,
-                self.product.name)
-        else:
-            return "Sin imagen"
+        return format_html(
+            "<img src='{0}' alt='{1}'>", self.image.thumbnail.url,
+            self.product.name)
+
+    @property
+    def sizes(self):
+        return self.size.all().values_list("name", flat=True)
 
 
 class Product(TimeStampedModel):
