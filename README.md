@@ -1,20 +1,16 @@
-Api Fans Store
-==============
+# Fans Store
 
+Master branch: `backend`
 
-Python Version: 3.6.3
----------------------
+Staging branch: `stable`
 
+Runtime: `Python 3.6.5`
 
-Setup Project:
---------------
+### Setup Project:
 
     - Configure the .env file with your project variables
 
-
-Dependencies:
--------------
-
+### Dependencies:
 
     Common.in:
         1. psycopg2
