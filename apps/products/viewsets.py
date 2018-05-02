@@ -11,12 +11,19 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 
 # Local imports
 from .filtersets import ProductFilter
-from .models import Color, Kind, Product, Size
+from .models import Collection, Color, Kind, Product, Size
 from .serializers import (
-    ColorSerializer, KindSerializer, ProductSerializer, SizeSerializer,)
+    CollectionSerializer, ColorSerializer, KindSerializer, ProductSerializer,
+    SizeSerializer,)
 
 
 # Create your viewsets here.
+class CollectionViewSet(ModelViewSet):
+    queryset = Collection.objects.all()
+    serializer_class = CollectionSerializer
+    http_method_names = ["get"]
+
+
 class ColorViewSet(ModelViewSet):
     queryset = Color.objects.all()
     serializer_class = ColorSerializer

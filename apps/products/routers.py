@@ -9,12 +9,13 @@
 
 # Local imports
 from .viewsets import (
-    ColorViewSet, KindViewSet, MostViewedViewSet, NewersViewSet, ProductViewSet,
-    SizeViewSet,)
+    CollectionViewSet, ColorViewSet, KindViewSet, MostViewedViewSet,
+    NewersViewSet, ProductViewSet, SizeViewSet,)
 
 
 # Create your routers here.
 products = (
+    (r"collections", CollectionViewSet),
     (r"colors", ColorViewSet),
     (r"kinds", KindViewSet),
     (r"most_viewed", MostViewedViewSet),

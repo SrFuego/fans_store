@@ -9,10 +9,16 @@ from rest_framework import serializers
 
 
 # Local imports
-from .models import Color, Kind, Model, Product, Size
+from .models import Collection, Color, Kind, Model, Product, Size
 
 
 # Create your serializers here.
+class CollectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Collection
+        fields = ("id", "name",)
+
+
 class ColorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Color
