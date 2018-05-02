@@ -18,7 +18,7 @@ class CollectionTestCase(TestCase):
     def setUp(self):
         self.collection = mommy.make(Collection)
 
-    def test_method_str_return_name_and_category(self):
+    def test_method_str_return_name(self):
         self.assertTrue(self.collection.name in self.collection.__str__())
 
     def tearDown(self):
@@ -29,7 +29,7 @@ class ColorTestCase(TestCase):
     def setUp(self):
         self.color = mommy.make(Color)
 
-    def test_method_str_return_name_and_category(self):
+    def test_method_str_return_name(self):
         self.assertTrue(self.color.name in self.color.__str__())
 
     def tearDown(self):
@@ -55,7 +55,7 @@ class ModelTestCase(TestCase):
     def setUp(self):
         self.model = mommy.make(Model)
 
-    def test_method_str_return_name(self):
+    def test_method_str_return_name_and_color(self):
         self.assertEqual(
             self.model.__str__(),
             "{0}, {1}".format(self.model.product.name, self.model.color))
@@ -72,7 +72,7 @@ class ProductTestCase(TestCase):
         self.product = mommy.make(Product)
 
     def test_method_str_return_name(self):
-        self.assertEqual(self.product.__str__(), self.product.name)
+        self.assertEqual(self.product.name, self.product.__str__())
 
     def test_have_queryset_models(self):
         self.assertTrue(self.product.models.model is Model)
@@ -85,7 +85,7 @@ class SizeTestCase(TestCase):
     def setUp(self):
         self.size = mommy.make(Size)
 
-    def test_method_str_return_name_and_category(self):
+    def test_method_str_return_name(self):
         self.assertTrue(self.size.name in self.size.__str__())
 
     def tearDown(self):
