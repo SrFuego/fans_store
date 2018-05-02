@@ -43,10 +43,13 @@ class ModelSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     models = ModelSerializer(many=True)
+    collection = serializers.CharField(source="collection.name")
 
     class Meta:
         model = Product
-        fields = ("id", "name", "description", "donations", "kind", "models",)
+        fields = (
+            "id", "name", "description", "donations", "collection", "kind",
+            "models",)
 
 
 class SizeSerializer(serializers.ModelSerializer):
