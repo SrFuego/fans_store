@@ -1,6 +1,6 @@
-#Fans Store
+# Fans Store
 
-##Backend:
+## Backend:
 
 Master branch: `backend`
 
@@ -8,11 +8,11 @@ Staging branch: `stable`
 
 Runtime: `Python 3.6.5`
 
-###Setup Project:
+### Setup Project:
 
     - Configure the .env file with your project variables
 
-###Dependencies:
+### Dependencies:
 
     Common.in:
         1. psycopg2
@@ -22,13 +22,13 @@ Runtime: `Python 3.6.5`
         1. pygraphviz
             - Install graphviz on your system
 
-##Frontend
+## Frontend
 
 Master branch: `frontend`
 
 Runtime: `node 8.11.1`
 
-###Setup Project:
+### Setup Project:
 
 ``` bash
 # install dependencies
