@@ -28,4 +28,6 @@ class ProductFilter(filters.FilterSet):
 
     class Meta:
         model = Product
-        fields = ("kind__name", "kind__category", "model__color", "model__size")
+        fields = (
+            "collection", "kind__name", "kind__category", "model__color",
+            "model__size",)

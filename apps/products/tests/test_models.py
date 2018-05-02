@@ -10,10 +10,21 @@ from model_mommy import mommy
 
 
 # Local imports
-from ..models import Color, Kind, Model, Product, Size
+from ..models import Collection, Color, Kind, Model, Product, Size
 
 
 # Create your model tests here.
+class CollectionTestCase(TestCase):
+    def setUp(self):
+        self.collection = mommy.make(Collection)
+
+    def test_method_str_return_name_and_category(self):
+        self.assertTrue(self.collection.name in self.collection.__str__())
+
+    def tearDown(self):
+        self.collection.delete()
+
+
 class ColorTestCase(TestCase):
     def setUp(self):
         self.color = mommy.make(Color)

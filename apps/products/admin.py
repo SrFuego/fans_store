@@ -11,7 +11,7 @@ from django.forms import CheckboxSelectMultiple
 
 
 # Local imports
-from .models import Color, Kind, Model, Product, Size
+from .models import Collection, Color, Kind, Model, Product, Size
 
 
 # Register your models here.
@@ -34,5 +34,6 @@ class ProductModelAdmin(admin.ModelAdmin):
     exclude = ("views",)
 
 
+admin.site.register(Collection)
 admin.site.register(Color)
 admin.site.register(Size)
