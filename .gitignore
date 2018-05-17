@@ -11,4 +11,5 @@
 .coverage
 .env
 .idea/
+.vscode/
 .python-version
