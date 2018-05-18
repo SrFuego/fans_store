@@ -18,7 +18,7 @@ from .managers import ProductManager
 
 # Create your models here.
 class Collection(TimeStampedModel):
-    name = models.CharField(unique=True, max_length=50, verbose_name="Nombre")
+    name = models.CharField(unique=True, max_length=50, verbose_name="nombre")
 
     class Meta:
         verbose_name = "Colección"
@@ -29,7 +29,7 @@ class Collection(TimeStampedModel):
 
 
 class Color(TimeStampedModel):
-    name = models.CharField(unique=True, max_length=20, verbose_name="Nombre")
+    name = models.CharField(unique=True, max_length=20, verbose_name="nombre")
 
     class Meta:
         verbose_name_plural = "Colores"
@@ -102,7 +102,7 @@ class Model(TimeStampedModel):
 
 class Product(TimeStampedModel):
     code = models.CharField(max_length=10, unique=True, verbose_name="código")
-    collection = models.ForeignKey("Collection")
+    collection = models.ForeignKey("Collection", verbose_name="colección")
     description = models.TextField(verbose_name="descripción")
     donations = models.PositiveSmallIntegerField(
         default=0, verbose_name="donaciones")
