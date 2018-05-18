@@ -8,10 +8,11 @@
 from rest_framework.routers import DefaultRouter
 
 # Local imports
+from ..orders.routers import orders
 from ..products.routers import products
 
 # Create your routers here.
-routers_tuples = (products,)
+routers_tuples = (orders, products,)
 routers_lists = sum(
     [list(router_tuple) for router_tuple in routers_tuples], [])
 

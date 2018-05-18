@@ -8,9 +8,10 @@
 
 
 # Local imports
+from .viewsets import OrderViewSet
 
 
 # Create your routers here.
-# router_list = (
-#     ("model", ModelViewSet),
-# )
+orders = (
+    (r"orders", OrderViewSet),
+)

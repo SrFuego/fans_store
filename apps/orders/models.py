@@ -2,6 +2,7 @@
 
 
 # Django imports
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -13,13 +14,37 @@ from model_utils.models import TimeStampedModel
 
 
 # Create your models here.
+class Client(TimeStampedModel):
+    cellphone = models.CharField(
+        max_length=50, blank=True, null=True, verbose_name="celular")
+    email = models.EmailField(blank=True, null=True, verbose_name="correo")
+    first_name = models.CharField(max_length=50, verbose_name="nombres")
+    last_name = models.CharField(max_length=50, verbose_name="apellidos")
+
+    class Meta:
+        verbose_name = "Cliente"
+
+    def __str__(self):
+        return self.full_name
+
+    def save(self):
+        if not any([self.cellphone, self.email]):
+            raise ValidationError("El cliente debe tener celular o correo")
+        return super().save()
+
+    @property
+    def full_name(self):
+        return "{0}, {1}".format(self.last_name, self.first_name)
+
+
 class Order(TimeStampedModel):
-    name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=10)
-    size = models.CharField(max_length=50)
+    client = models.ForeignKey("Client", verbose_name="cliente")
+    delivered = models.BooleanField(default=False, verbose_name="entregado")
+    model = models.ManyToManyField("products.Model", verbose_name="modelos")
+    mount = models.PositiveSmallIntegerField(verbose_name="total")
 
     class Meta:
         verbose_name = "Pedido"
 
     def __str__(self):
-        return self.name
+        return self.client.full_name

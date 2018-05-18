@@ -14,11 +14,11 @@ from .models import Color, Kind, Product, Size
 
 # Create your filter sets here.
 class ProductFilter(filters.FilterSet):
-    kind__name = filters.ChoiceFilter(
-        label="kind__name",
-        choices=tuple(
-            [(kind, kind) for kind in
-                set(Kind.objects.all().values_list("name", flat=True))]))
+    # kind__name = filters.ChoiceFilter(
+    #     label="kind__name",
+    #     choices=tuple(
+    #         [(kind, kind) for kind in
+    #             set(Kind.objects.all().values_list("name", flat=True))]))
     kind__category = filters.ChoiceFilter(
         label="kind__category", choices=Kind.CATEGORY_CHOICES)
     model__color = filters.ModelChoiceFilter(
@@ -29,5 +29,6 @@ class ProductFilter(filters.FilterSet):
     class Meta:
         model = Product
         fields = (
-            "collection", "kind__name", "kind__category", "model__color",
+            "collection", "kind__category", "model__color",
+            # "collection", "kind__name", "kind__category", "model__color",
             "model__size",)

@@ -10,7 +10,7 @@ from import_export.admin import ExportMixin
 
 
 # Local imports
-from .models import Order
+from .models import Client, Order
 from .resources import OrderResource
 
 
@@ -18,4 +18,7 @@ from .resources import OrderResource
 @admin.register(Order)
 class OrderModelAdmin(ExportMixin, admin.ModelAdmin):
     resource_class = OrderResource
-    list_display = ("name", "size",)
+    list_display = ("id",)
+
+
+admin.site.register(Client)
