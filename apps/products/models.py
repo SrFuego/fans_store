@@ -91,7 +91,7 @@ class Model(TimeStampedModel):
         return "{0}, {1}".format(self.product.name, self.color)
 
     def image_admin_thumbnail(self):
-        return format_html(
+        return format_html(  # pragma: no cover
             "<img src='{0}' alt='{1}'>", self.image.thumbnail.url,
             self.product.name)
 
