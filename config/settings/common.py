@@ -36,6 +36,7 @@ THIRD_PARTY_APPS = (
     "corsheaders",
     "stdimage",
     "django_filters",
+    "import_export",
 )
 
 LOCAL_APPS = (
