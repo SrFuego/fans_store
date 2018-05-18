@@ -12,14 +12,16 @@ from rest_framework.test import APITestCase
 
 
 # Local imports
-from ..models import Product
+from ..models import Collection, Product
 
 
 # Create your viewset tests here.
 class MostViewedTests(APITestCase):
     def setUp(self):
         self.most_visits_url = reverse("api_v1:most_viewed-list")
-        self.products = mommy.make(Product, _quantity=10)
+        self.collection = mommy.make(Collection)
+        self.products = mommy.make(
+            Product, collection=self.collection, _quantity=10)
 
     def test_get_response(self):
         response = self.client.get(self.most_visits_url)
@@ -37,7 +39,9 @@ class MostViewedTests(APITestCase):
 class NewersTests(APITestCase):
     def setUp(self):
         self.newers_url = reverse("api_v1:newers-list")
-        self.products = mommy.make(Product, _quantity=10)
+        self.collection = mommy.make(Collection)
+        self.products = mommy.make(
+            Product, collection=self.collection, _quantity=10)
 
     def test_get_response(self):
         response = self.client.get(self.newers_url)
@@ -54,7 +58,8 @@ class NewersTests(APITestCase):
 
 class ProductTests(APITestCase):
     def setUp(self):
-        self.product = mommy.make(Product)
+        self.collection = mommy.make(Collection)
+        self.product = mommy.make(Product, collection=self.collection)
         self.product_url = reverse(
             "api_v1:products-detail", args=[self.product.id])
 
