@@ -101,11 +101,8 @@ class Model(TimeStampedModel):
 
 
 class Product(TimeStampedModel):
-    # TODO: for production
-    # @param collection: delete null=True, blank=True
-
     code = models.CharField(max_length=10, unique=True, verbose_name="código")
-    collection = models.ForeignKey("Collection", null=True, blank=True)
+    collection = models.ForeignKey("Collection")
     description = models.TextField(verbose_name="descripción")
     donations = models.PositiveSmallIntegerField(
         default=0, verbose_name="donaciones")
