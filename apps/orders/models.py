@@ -27,7 +27,8 @@ class Client(TimeStampedModel):
     def __str__(self):
         return self.full_name
 
-    def save(self):
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
         if not any([self.cellphone, self.email]):
             raise ValidationError("El cliente debe tener celular o correo")
         return super().save()
